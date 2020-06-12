@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  user: one
+  lat: 1.5
+  long: 1.5
+  public: false
+
+two:
+  id: 1
+  user: two
+  lat: 1.5
+  long: 1.5
+  public: false
