@@ -22,14 +22,13 @@ ActiveRecord::Schema.define(version: 2020_06_12_131159) do
     t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
-  create_table "shared_places", force: :cascade do |t|
-    t.integer "place_id", null: false
+  create_table "shared_locations", force: :cascade do |t|
+    t.integer "location_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"place\", \"user\"", name: "index_shared_places_on_place_and_user", unique: true
-    t.index ["place_id"], name: "index_shared_places_on_place_id"
-    t.index ["user_id"], name: "index_shared_places_on_user_id"
+    t.index ["location_id"], name: "index_shared_locations_on_location_id"
+    t.index ["user_id"], name: "index_shared_locations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,6 +40,6 @@ ActiveRecord::Schema.define(version: 2020_06_12_131159) do
   end
 
   add_foreign_key "locations", "users"
-  add_foreign_key "shared_places", "places"
-  add_foreign_key "shared_places", "users"
+  add_foreign_key "shared_locations", "locations"
+  add_foreign_key "shared_locations", "users"
 end
